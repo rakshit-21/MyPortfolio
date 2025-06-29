@@ -2,14 +2,23 @@
   "version": 2,
   "builds": [
     {
-      "src": "Portfolio/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "Portfolio/dist"
+        "distDir": "dist",
+        "cleanDistDir": true
       }
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/Portfolio/index.html" }
+    {
+      "src": "/assets/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" }
+    },
+    { 
+      "src": "/(.*)", 
+      "dest": "/index.html",
+      "status": 200 
+    }
   ]
 }
