@@ -9,7 +9,7 @@ const Projects = () => {
       description:
         "SahYatri is an IoT-enabled transportation informatics system designed to optimize mass transit operations through real-time passenger density analytics.",
       image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Nextjs", "PostgreSQL", "YoloV8","Raspberry Pi"],
+      technologies: ["IoT", "Nextjs", "PostgreSQL", "YoloV8","Raspberry Pi", "RESTful APIs"],
       github: "https://github.com/rakshit-21/SahYatri",
     },
     {
@@ -22,14 +22,15 @@ const Projects = () => {
       github: "https://github.com/rakshit-21/AskGPT",
     },
     {
-      id: 3,
-      title: "Password Generator",
-      description:
-        "A password generator built using React that allows users to customize password length, and choose whether to include numbers and special characters.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "CSS"],
-      github: "https://github.com/rakshit-21/PasswordGenerator",
-    },
+     id: 3,
+     title: "Timetable Retriever",
+     description:
+     "A modern web application that extracts, processes, and displays college timetables from PDF files. Built with a React frontend and a FastAPI backend to enable fast retrieval, structured schedule views, and an intuitive user experience.",
+     image: "/placeholder.svg?height=300&width=400",
+     technologies: ["React", "Vite", "FastAPI", "Python", "Tailwind CSS"],
+     github: "https://github.com/rakshit-21/Timetable-Retriever",
+},
+
     // {
     //   id: 4,
     //   title: "REST API Service",

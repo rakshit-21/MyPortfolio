@@ -36,11 +36,11 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light">Aspiring Embedded & Frontend Developer</p>
+            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light">Aspiring Software Developer</p>
           </div>
 
           <p className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-400 leading-relaxed">
-          Building intelligent hardware systems with clean, interactive user interfaces using C, C++, Python and React.
+          Building intelligent web applications and AI-powered user experiences using Python, JavaScript, React, and modern AI frameworks.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

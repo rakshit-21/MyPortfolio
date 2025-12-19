@@ -12,7 +12,9 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-gray-300 leading-relaxed">
-                I'm an aspiring Embedded Systems and Frontend Developer with a passion for building seamless interactions between hardware and user interfaces. From writing efficient C/C++ code for microcontrollers to crafting responsive UIs with React and Tailwind, I enjoy bridging low-level logic with high-level user experiences. I focus on writing clean, maintainable code and continually learning to stay aligned with industry best practices.
+                I am a Frontend and Generative AI Developer focused on building modern, 
+                interactive web applications enhanced with AI-driven features. I enjoy crafting responsive user interfaces and 
+                integrating generative models to deliver intelligent, scalable, and user-centric experiences, with an emphasis on clean and maintainable code.
             </p>
 
             <p className="text-lg text-gray-300 leading-relaxed">
@@ -29,7 +31,7 @@ const About = () => {
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
                 {/* <h3 className="text-xl font-semibold text-white mb-2">Backend Expertise</h3> */}
                 <p className="text-gray-400">
-                  Developing embedded firmware and intuitive frontend interfaces to create end-to-end smart systems.
+                  Building intelligent web interfaces and AI-powered systems to deliver end-to-end smart applications.
                 </p>
               </div>
             </div>

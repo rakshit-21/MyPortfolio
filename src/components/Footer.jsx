@@ -61,7 +61,7 @@ const Footer = () => {
               </span>
             </div> */}
             <p className="text-gray-400 mb-6 max-w-md">
-              Building intelligent hardware systems with clean, interactive user interfaces using C, C++, Python and React.
+              Building intelligent systems with clean, interactive web interfaces using Python and React.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (

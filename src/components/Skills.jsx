@@ -17,6 +17,9 @@ const Skills = () => {
         "Tailwind CSS",
         "React",
         "MySQL",
+        "RESTful APIs",
+        "Machine Learning",
+        "Generative AI"
        
       ],
     },
@@ -24,9 +27,11 @@ const Skills = () => {
       title: "Tools & Others",
       skills: [
         "Git",
+        "Github",
+        "Canva",
+        "Figma",
         "Arduino",
         "Arduino IDE",
-        "Figma",
         "ESP32",
         "Raspberry Pi"
       ],
