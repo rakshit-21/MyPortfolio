@@ -1,4 +1,8 @@
 "use client"
+import sahyatriImg from "../assets/sahyatri.png";
+import gptImg from "../assets/gpt.png"
+import ttImg from "../assets/tt.png"
+
 
 const Projects = () => {
   // List of projects. Feel free to add, edit, or remove entries as needed.
@@ -8,7 +12,7 @@ const Projects = () => {
       title: "SahYatri-Bus Occupancy Tracker",
       description:
         "SahYatri is an IoT-enabled transportation informatics system designed to optimize mass transit operations through real-time passenger density analytics.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: sahyatriImg ,
       technologies: ["IoT", "Nextjs", "PostgreSQL", "YoloV8","Raspberry Pi", "RESTful APIs"],
       github: "https://github.com/rakshit-21/SahYatri",
     },
@@ -17,7 +21,7 @@ const Projects = () => {
       title: "AskGPT Chatbot",
       description:
         "Developed AskGPT – a chatbot powered by Google's Gemini API for real-time, natural language query resolution.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: gptImg,
       technologies: ["React", "Tailwind CSS", "Gemini API"],
       github: "https://github.com/rakshit-21/AskGPT",
     },
@@ -26,7 +30,7 @@ const Projects = () => {
      title: "Timetable Retriever",
      description:
      "A modern web application that extracts, processes, and displays college timetables from PDF files. Built with a React frontend and a FastAPI backend to enable fast retrieval, structured schedule views, and an intuitive user experience.",
-     image: "/placeholder.svg?height=300&width=400",
+     image: ttImg,
      technologies: ["React", "Vite", "FastAPI", "Python", "Tailwind CSS"],
      github: "https://github.com/rakshit-21/Timetable-Retriever",
 },

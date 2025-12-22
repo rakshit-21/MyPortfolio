@@ -1,4 +1,6 @@
 "use client"
+import emailjs from "@emailjs/browser";
+
 
 import { useState } from "react"
 
@@ -20,20 +22,43 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const handleSubmit = (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus("success")
-      setFormData({ name: "", email: "", subject: "", message: "" })
+  emailjs
+    .send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_MAIN_TEMPLATE_ID,
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(
+      () => {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        setIsSubmitting(false);
+      },
+      (error) => {
+        console.error(error);
+        setSubmitStatus("error");
+        setIsSubmitting(false);
+      }
+    );
+};
 
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus(null), 3000)
-    }, 1000)
-  }
+
+  
 
   const contactInfo = [
     {
@@ -250,12 +275,18 @@ const Contact = () => {
                   Message sent successfully! I'll get back to you soon.
                 </div>
               )}
+              {submitStatus === "error" && (
+  <div className="text-center text-red-400 font-medium">
+    Something went wrong. Please try again.
+  </div>
+)}
+
             </form>
           </div>
         </div>
       </div>
     </section>
   )
-}
+};
 
 export default Contact
