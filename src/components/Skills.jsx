@@ -14,12 +14,15 @@ const Skills = () => {
       title: "Tech Stack",
       skills: [
         "FastAPI",
-        "Tailwind CSS",
         "React",
         "MySQL",
         "RESTful APIs",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Framer Motion", 
         "Machine Learning",
-        "Generative AI"
+        "Generative AI",
+        "Langchain"
        
       ],
     },
@@ -28,6 +31,8 @@ const Skills = () => {
       skills: [
         "Git",
         "Github",
+        "Postman",
+        "Linux",
         "Canva",
         "Figma",
         "Arduino",

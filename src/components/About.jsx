@@ -12,7 +12,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-gray-300 leading-relaxed">
-                I am a Frontend and Generative AI Developer focused on building modern, 
+                I am a Software Developer focused on building modern, 
                 interactive web applications enhanced with AI-driven features. I enjoy crafting responsive user interfaces and 
                 integrating generative models to deliver intelligent, scalable, and user-centric experiences, with an emphasis on clean and maintainable code.
             </p>
