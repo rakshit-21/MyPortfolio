@@ -73,8 +73,8 @@ const Contact = () => {
         </svg>
       ),
       title: "Email",
-      value: "sunejarakshit05@gmail.com",
-      link: "mailto:sunejarakshit05@gmail.com",
+      value: "contact@rakshitsuneja.in",
+      link: "mailto:contact@rakshitsuneja.in",
     },
     {
       icon: (

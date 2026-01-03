@@ -24,27 +24,40 @@ const Header = ({ activeSection }) => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
         <div className="flex items-center h-16">
-        <div className="flex-shrink-0" />
 
-          
-          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-baseline space-x-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200
-                    ${
-                      activeSection === item.id
-                        ? "text-blue-400 bg-gray-800"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800"
-                    }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
+  {/* LEFT PLACEHOLDER (balances right button) */}
+  <div className="flex-1" />
+
+  {/* CENTER NAV */}
+  <div className="hidden md:flex flex-1 justify-center">
+    <div className="flex items-baseline space-x-4">
+      {navItems.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => scrollToSection(item.id)}
+          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer
+            ${
+              activeSection === item.id
+                ? "text-blue-400 bg-gray-800"
+                : "text-gray-300 hover:text-white hover:bg-gray-800"
+            }`}
+        >
+          {item.label}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  {/* RIGHT RESUME BUTTON */}
+  <div className="hidden md:flex flex-1 justify-end pr-6">
+    <a
+      href="Rakshit_Resume_SDE.pdf"
+      className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md
+                 text-white bg-blue-600 hover:bg-blue-500 transition-colors"
+    >
+      Download Resume
+    </a>
+  </div>
 
           {/* MOBILE MENU BUTTON ------------------------------------ */}
           <div className="md:hidden ml-auto">

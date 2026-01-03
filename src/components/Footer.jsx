@@ -102,7 +102,7 @@ const Footer = () => {
             <div className="space-y-2">
               <p className="text-gray-400">
                 <a href="mailto:alex.johnson@email.com" className="hover:text-white transition-colors duration-200">
-                  sunejarakshit05@gmail.com
+                  contact@rakshitsuneja.in
                 </a>
               </p>
               <p className="text-gray-400">
