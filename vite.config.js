@@ -4,6 +4,7 @@ import tailwind from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwind()],
+  base: '/',
   build: {
     outDir: "dist", // Explicitly set output directory
     emptyOutDir: true, // Clear dist folder on each build
