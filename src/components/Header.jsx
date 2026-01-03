@@ -51,7 +51,8 @@ const Header = ({ activeSection }) => {
   {/* RIGHT RESUME BUTTON */}
   <div className="hidden md:flex flex-1 justify-end pr-6">
     <a
-      href="Rakshit_Resume_SDE.pdf"
+      href="Rakshit_Resume_SDE.pdf" 
+      download 
       className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md
                  text-white bg-blue-600 hover:bg-blue-500 transition-colors"
     >
