@@ -99,26 +99,40 @@ const Header = ({ activeSection }) => {
         </div>
 
         {/* --- MOBILE NAV ------------------------------------------- */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-800 rounded-lg mt-2 flex flex-col items-center">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors duration-200
-                    ${
-                      activeSection === item.id
-                        ? "text-blue-400 bg-gray-700"
-                        : "text-gray-300 hover:text-white hover:bg-gray-700"
-                    }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* --- MOBILE NAV ------------------------------------------- */}
+{isMenuOpen && (
+  <div className="md:hidden">
+    <div className="px-2 pt-2 pb-4 space-y-2 bg-gray-800 rounded-lg mt-2 flex flex-col items-center">
+      
+      {navItems.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => scrollToSection(item.id)}
+          className={`block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors duration-200
+            ${
+              activeSection === item.id
+                ? "text-blue-400 bg-gray-700"
+                : "text-gray-300 hover:text-white hover:bg-gray-700"
+            }`}
+        >
+          {item.label}
+        </button>
+      ))}
+
+      {/* MOBILE RESUME BUTTON */}
+      <a
+        href="Rakshit_Resume_SDE.pdf"
+        download
+        className="mt-3 w-full text-center px-4 py-2 rounded-md text-base font-semibold
+                   text-white bg-blue-600 hover:bg-blue-500 transition-colors"
+      >
+        Download Resume
+      </a>
+    </div>
+  </div>
+)}
+
+          
       </nav>
     </header>
   );
