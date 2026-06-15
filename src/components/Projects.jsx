@@ -30,7 +30,7 @@ const projects = [
     "Groq",
     "REST APIs"
   ],
-  github: "https://github.com/rakshit-21/TripMind-AI", // update if different
+  github: "https://github.com/rakshit-21/TripMind", 
   signal: "LLM-Powered Travel Planning",
   },
   {
@@ -38,7 +38,7 @@ const projects = [
   title: "SpendWise",
   description:
     "A full-stack expense management application featuring secure JWT authentication, real-time expense tracking, category-wise analytics, and interactive financial dashboards.",
-  image: spendwise, // update with your image variable
+  image: spendwise, 
   technologies: [
     "React",
     "Express",
@@ -48,7 +48,7 @@ const projects = [
     "Chart.js",
     "JWT"
   ],
-  github: "https://github.com/rakshit-21/SpendWise", // update if different
+  github: "https://github.com/rakshit-21/SpendWise",
   signal: "Finance Management Platform",
   },
 ]

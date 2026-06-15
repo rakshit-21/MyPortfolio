@@ -1,6 +1,6 @@
 const skillCategories = [
   {
-    title: "Full Stack Engineering",
+    title: "Full Stack Development",
     caption: "Crafting modern web experiences with scalable architectures and seamless user interactions.",
     skills: [
       "React",
