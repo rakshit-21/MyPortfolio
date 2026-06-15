@@ -1,18 +1,45 @@
 const skillCategories = [
   {
-    title: "Firmware Logic",
-    caption: "Low-level thinking, fast iteration, and board-level experiments.",
-    skills: ["C", "C++", "Arduino", "Arduino IDE", "ESP32", "Raspberry Pi", "Linux"],
+    title: "Full Stack Engineering",
+    caption: "Crafting modern web experiences with scalable architectures and seamless user interactions.",
+    skills: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "JavaScript",
+      "Tailwind CSS",
+      "REST APIs"
+    ],
   },
   {
-    title: "Intelligent Apps",
-    caption: "Interfaces and APIs that turn data into usable product experiences.",
-    skills: ["Python", "JavaScript", "React", "FastAPI", "RESTful APIs", "Tailwind CSS", "Shadcn UI"],
+    title: "IoT & Embedded Development",
+    caption: "Building intelligent connected systems using microcontrollers, sensors, and edge computing.",
+    skills: [
+      "C",
+      "C++",
+      "Arduino",
+      "ESP32",
+      "Raspberry Pi",
+      "Embedded Systems",
+      "Linux",
+      "Sensor Integration"
+    ],
   },
   {
-    title: "AI + Systems",
-    caption: "Computer vision, generative AI, and connected decision systems.",
-    skills: ["Machine Learning", "Generative AI", "Langchain", "YOLOv8", "MySQL", "Postman", "Git", "Figma"],
+    title: "Artificial Intelligence & Vision",
+    caption: "Creating AI-powered applications that understand, analyze, and automate real-world processes.",
+    skills: [
+      "Python",
+      "YOLOv8",
+      "OpenCV",
+      "Machine Learning",
+      "Generative AI",
+      "LangChain",
+      "MySQL",
+      "Git"
+    ],
   },
 ]
 
