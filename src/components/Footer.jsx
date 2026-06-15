@@ -14,9 +14,9 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">Rakshit.dev</p>
+            <p className="text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">RAKSHIT.IN</p>
             <p className="mt-3 max-w-xl text-slate-400">
-              Embedded systems, IoT, AI, and polished web interfaces for practical connected products.
+              Software Engineering, IoT, AI, and polished web interfaces for practical connected products.
             </p>
           </div>
 
