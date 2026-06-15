@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 
 const Header = ({ activeSection }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -11,131 +11,101 @@ const Header = ({ activeSection }) => {
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
-  ];
+  ]
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
-  };
+    const element = document.getElementById(sectionId)
+    if (element) element.scrollIntoView({ behavior: "smooth" })
+    setIsMenuOpen(false)
+  }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-        <div className="flex items-center h-16">
+    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6">
+      <nav className="glass-panel mx-auto max-w-7xl rounded-2xl px-4">
+        <div className="flex h-16 items-center justify-between gap-4">
+          <button
+            onClick={() => scrollToSection("home")}
+            className="group flex items-center gap-3 text-left"
+            aria-label="Go to home"
+          >
+            {/* <span className="grid h-10 w-10 place-items-center rounded-xl border border-cyan-300/25 bg-cyan-300/10 text-sm font-black text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.18)]">
+              R
+            </span>
+            <span className="hidden text-sm font-bold uppercase tracking-[0.22em] text-slate-200 sm:block">
+              Rakshit
+            </span> */}
+          </button>
 
-  {/* LEFT PLACEHOLDER (balances right button) */}
-  <div className="flex-1" />
-
-  {/* CENTER NAV */}
-  <div className="hidden md:flex flex-1 justify-center">
-    <div className="flex items-baseline space-x-4">
-      {navItems.map((item) => (
-        <button
-          key={item.id}
-          onClick={() => scrollToSection(item.id)}
-          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer
-            ${
-              activeSection === item.id
-                ? "text-blue-400 bg-gray-800"
-                : "text-gray-300 hover:text-white hover:bg-gray-800"
-            }`}
-        >
-          {item.label}
-        </button>
-      ))}
-    </div>
-  </div>
-
-  {/* RIGHT RESUME BUTTON */}
-  <div className="hidden md:flex flex-1 justify-end pr-6">
-    <a
-      href="Rakshit_Resume_SDE.pdf" 
-      download 
-      className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md
-                 text-white bg-blue-600 hover:bg-blue-500 transition-colors"
-    >
-      Download Resume
-    </a>
-  </div>
-
-          {/* MOBILE MENU BUTTON ------------------------------------ */}
-          <div className="md:hidden ml-auto">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-            >
-              {/* hamburger */}
-              <svg
-                className={`${isMenuOpen ? "hidden" : "block"} h-6 w-6`}
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
+          <div className="hidden items-center rounded-full border border-white/10 bg-white/[0.04] p-1 md:flex">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition duration-200 ${
+                  activeSection === item.id
+                    ? "bg-cyan-300/15 text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.18)]"
+                    : "text-slate-300 hover:bg-white/10 hover:text-white"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              {/* X / close */}
-              <svg
-                className={`${isMenuOpen ? "block" : "hidden"} h-6 w-6`}
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+                {item.label}
+              </button>
+            ))}
           </div>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="Rakshit_Resume_SDE.pdf"
+              download
+              className="rounded-lg bg-gradient-to-r from-cyan-400 to-purple-600 px-4 py-2 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(34,211,238,0.28)]"
+            >
+              Resume
+            </a>
+          </div>
+
+          <button
+            onClick={() => setIsMenuOpen((value) => !value)}
+            className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-100 md:hidden"
+            aria-label="Toggle navigation menu"
+          >
+            <span className="relative h-5 w-6">
+              <span
+                className={`absolute left-0 h-0.5 w-6 bg-current transition ${isMenuOpen ? "top-2 rotate-45" : "top-0"}`}
+              />
+              <span
+                className={`absolute left-0 top-2 h-0.5 w-6 bg-current transition ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
+              />
+              <span
+                className={`absolute left-0 h-0.5 w-6 bg-current transition ${isMenuOpen ? "top-2 -rotate-45" : "top-4"}`}
+              />
+            </span>
+          </button>
         </div>
 
-        {/* --- MOBILE NAV ------------------------------------------- */}
-        {/* --- MOBILE NAV ------------------------------------------- */}
-{isMenuOpen && (
-  <div className="md:hidden">
-    <div className="px-2 pt-2 pb-4 space-y-2 bg-gray-800 rounded-lg mt-2 flex flex-col items-center">
-      
-      {navItems.map((item) => (
-        <button
-          key={item.id}
-          onClick={() => scrollToSection(item.id)}
-          className={`block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors duration-200
-            ${
-              activeSection === item.id
-                ? "text-blue-400 bg-gray-700"
-                : "text-gray-300 hover:text-white hover:bg-gray-700"
-            }`}
-        >
-          {item.label}
-        </button>
-      ))}
-
-      {/* MOBILE RESUME BUTTON */}
-      <a
-        href="Rakshit_Resume_SDE.pdf"
-        download
-        className="mt-3 w-full text-center px-4 py-2 rounded-md text-base font-semibold
-                   text-white bg-blue-600 hover:bg-blue-500 transition-colors"
-      >
-        Download Resume
-      </a>
-    </div>
-  </div>
-)}
-
-          
+        {isMenuOpen && (
+          <div className="space-y-2 border-t border-white/10 pb-4 pt-3 md:hidden">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`block w-full rounded-xl px-4 py-3 text-left text-sm font-semibold transition ${
+                  activeSection === item.id ? "bg-cyan-300/15 text-cyan-100" : "text-slate-300 hover:bg-white/10"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            <a
+              href="Rakshit_Resume_SDE.pdf"
+              download
+              className="block rounded-xl bg-gradient-to-r from-cyan-400 to-purple-600 px-4 py-3 text-center text-sm font-bold text-white"
+            >
+              Download Resume
+            </a>
+          </div>
+        )}
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

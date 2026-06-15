@@ -1,105 +1,150 @@
 "use client"
 
-const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact")
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+const letters = "Rakshit\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Suneja".split("")
 
-  const scrollToProjects = () => {
-    const element = document.getElementById("projects")
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
+const particles = Array.from({ length: 34 }, (_, index) => ({
+  id: index,
+  x: `${(index * 29) % 100}%`,
+  y: `${(index * 47) % 100}%`,
+  duration: `${8 + (index % 8)}s`,
+}))
+
+const Hero = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id)
+    if (element) element.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800"></div>
-
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+    <section id="home" className="relative min-h-screen overflow-hidden px-4 pt-24 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.22),transparent_32rem),radial-gradient(circle_at_85%_20%,rgba(168,85,247,0.2),transparent_34rem),linear-gradient(135deg,#02040d,#071126_52%,#030712)]" />
+      <div className="particle-field absolute inset-0">
+        {particles.map((particle) => (
+          <span
+            key={particle.id}
+            style={{ "--x": particle.x, "--y": particle.y, "--duration": particle.duration }}
+          />
+        ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="space-y-8">
+      <div className="absolute left-8 top-28 h-28 w-28 rotate-12 border border-cyan-300/20 bg-cyan-300/5 blur-[0.2px] float-slow" />
+      <div className="absolute bottom-24 right-12 h-36 w-36 rounded-full border border-purple-400/20 bg-purple-500/10 float-medium" />
+
+      
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-12 py-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="space-y-8 section-reveal">
+          
+          {/* <div className="inline-flex items-center gap-3 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100">
+            <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_16px_#22d3ee]" />
+            Systems online
+          </div>
+ */}
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="block text-white">Hi, I'm</span>
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                Rakshit Suneja
-              </span>
+            <p className="text-sm font-semibold uppercase tracking-[0.34em] text-slate-400">Electronics and Communication Engineering</p>
+            <h1 className="neon-text text-6xl font-black leading-none text-white sm:text-7xl lg:text-8xl">
+              {letters.map((letter, index) => (
+                <span key={`${letter}-${index}`} className="typing-letter" style={{ "--i": index }}>
+                  {letter}
+                </span>
+              ))}
             </h1>
-            
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light">Aspiring Software Developer</p>
+            <div className="max-w-3xl overflow-hidden rounded-full border border-white/10 bg-white/5 p-1">
+              <div className="h-2 w-full origin-left animate-[pulse_1.2s_ease-in-out_infinite] rounded-full bg-gradient-to-r from-cyan-300 via-blue-500 to-purple-500" />
+            </div>
+            <p className="max-w-3xl text-xl font-medium text-slate-200 sm:text-2xl">
+              Full Stack Developer | IoT Developer | AI/ML Enthusiast | Software Engineer 
+            </p>
+            <p className="max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+              I build intelligent connected systems where hardware, computer vision, and polished web interfaces work together.
+            </p>
           </div>
 
-          <p className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-400 leading-relaxed">
-          Building intelligent web applications and AI-powered user experiences using Python, JavaScript, React, and modern AI frameworks.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <button
-              onClick={scrollToProjects}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl hover:cursor-pointer "
+              onClick={() => scrollToSection("projects")}
+              className="group rounded-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_35px_rgba(34,211,238,0.28)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_55px_rgba(168,85,247,0.42)]"
             >
-              View My Work
+              View Projects
             </button>
+            <a
+              href="Rakshit_Resume_SDE.pdf"
+              download
+              className="rounded-lg border border-cyan-300/35 bg-white/5 px-7 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-cyan-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:bg-cyan-300/10"
+            >
+              Download Resume
+            </a>
             <button
-              onClick={scrollToContact}
-              className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-gray-400 hover:text-white transform hover:scale-105 transition-all duration-200 hover:cursor-pointer"
+              onClick={() => scrollToSection("contact")}
+              className="rounded-lg border border-purple-300/35 bg-purple-500/10 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-purple-100 transition duration-300 hover:-translate-y-1 hover:border-purple-200 hover:bg-purple-400/15"
             >
-              Get In Touch
+              Contact Me
             </button>
+          </div>
+        </div>
+
+        <div className="relative mx-auto h-[520px] w-full max-w-[620px] section-reveal" data-cursor="hover">
+          <div className="absolute inset-x-10 top-10 h-64 rounded-[2rem] border border-cyan-300/20 bg-cyan-300/5 blur-3xl" />
+          <div className="glass-panel monitor-glow absolute left-8 top-12 h-44 w-56 rotate-[-7deg] rounded-lg p-4 sm:left-0">
+            <div className="scanline" />
+            <div className="mb-3 flex gap-2">
+              <span className="h-2 w-2 rounded-full bg-red-400" />
+              <span className="h-2 w-2 rounded-full bg-yellow-300" />
+              <span className="h-2 w-2 rounded-full bg-green-300" />
+            </div>
+            <div className="space-y-2 text-xs text-cyan-200">
+              <p>{">"} boot rakshit.dev</p>
+              <p className="text-purple-200">sensor_bus: active</p>
+              <p>vision_model: loaded</p>
+              <p className="text-slate-300">deploying portfolio UI...</p>
+            </div>
           </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6 pt-8">
-            <a
-              href="https://github.com/rakshit-21"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transform hover:scale-110 transition-all duration-200"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rakshit-suneja-03894b329/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transform hover:scale-110 transition-all duration-200"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transform hover:scale-110 transition-all duration-200"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-              </svg>
-            </a>
+          <div className="glass-panel monitor-glow absolute right-0 top-2 h-52 w-64 rotate-[6deg] rounded-lg p-4">
+            <div className="scanline" />
+            <div className="grid h-full grid-cols-3 gap-2">
+              {Array.from({ length: 9 }).map((_, index) => (
+                <div
+                  key={index}
+                  className="rounded border border-white/10 bg-gradient-to-br from-cyan-300/20 to-purple-500/10"
+                />
+              ))}
+            </div>
           </div>
+
+          <div className="glass-panel monitor-glow absolute bottom-16 left-1/2 h-72 w-[78%] -translate-x-1/2 rounded-xl p-5">
+            <div className="scanline" />
+            <div className="mb-5 h-3 w-28 rounded-full bg-cyan-200/50" />
+            <div className="grid h-44 grid-cols-[1.2fr_0.8fr] gap-4">
+              <div className="rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/15 to-blue-700/10 p-4">
+                <div className="h-full rounded-md border border-cyan-200/20 bg-[linear-gradient(135deg,rgba(34,211,238,0.22),transparent_45%),linear-gradient(90deg,transparent_48%,rgba(255,255,255,0.12)_49%,transparent_50%)]" />
+              </div>
+              <div className="space-y-3">
+                <div className="h-8 rounded bg-purple-400/20" />
+                <div className="h-8 rounded bg-cyan-400/20" />
+                <div className="h-8 rounded bg-blue-400/20" />
+                <div className="h-8 rounded bg-white/10" />
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-0 left-1/2 h-44 w-36 -translate-x-1/2">
+            <div className="mx-auto h-16 w-16 rounded-full bg-slate-950 shadow-[0_0_42px_rgba(34,211,238,0.5)]" />
+            <div className="mx-auto mt-[-6px] h-28 w-32 rounded-t-[4rem] bg-gradient-to-b from-slate-900 to-black shadow-[0_0_36px_rgba(0,0,0,0.75)]" />
+          </div>
+
+          <div className="absolute bottom-8 left-1/2 h-20 w-80 -translate-x-1/2 rounded-[100%] bg-cyan-300/10 blur-2xl" />
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </div>
+      <button
+        onClick={() => scrollToSection("about")}
+        className="absolute bottom-7 left-1/2 z-20 -translate-x-1/2 text-slate-400 transition hover:text-cyan-200"
+        aria-label="Scroll to about section"
+      >
+        <span className="block h-12 w-7 rounded-full border border-cyan-200/30 p-1">
+          <span className="mx-auto block h-2 w-2 animate-bounce rounded-full bg-cyan-200" />
+        </span>
+      </button>
     </section>
   )
 }
