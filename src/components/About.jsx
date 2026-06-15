@@ -1,28 +1,31 @@
 import profileImg from "../assets/rakshit.jpeg"
 
 const identityCards = [
-  "B.Tech Student",
-  "Embedded Systems Enthusiast",
+  "Software Engineer",
+  "Full STack Developer",
   "IoT Developer",
   "AI & Computer Vision Explorer",
 ]
 
 const timeline = [
-  {
-    period: "Now",
-    title: "Computer Science and Electronics Engineering",
-    detail: "Building a foundation across software, circuits, firmware thinking, and connected intelligence.",
-  },
-  {
-    period: "Lab",
-    title: "Embedded + IoT Experiments",
-    detail: "Working with Arduino, ESP32, Raspberry Pi, sensors, and real-time data pipelines.",
-  },
-  {
-    period: "AI",
-    title: "Computer Vision and Generative Interfaces",
-    detail: "Exploring YOLO, Gemini-powered tools, and AI-enhanced user experiences.",
-  },
+ {
+  period: "Full Stack",
+  title: "Designing End-to-End Digital Experiences",
+  detail:
+    "Crafting responsive frontend interfaces, robust backend services, and scalable APIs using modern web technologies and cloud-ready architectures.",
+},
+{
+  period: "IoT",
+  title: "Bridging Hardware and Software",
+  detail:
+    "Building connected systems with microcontrollers, sensors, and edge devices that collect, process, and communicate data in real time.",
+},
+{
+  period: "AI & Vision",
+  title: "Intelligent Systems and Automation",
+  detail:
+    "Leveraging Computer Vision, Machine Learning, LLMs, and AI-powered workflows to transform data into actionable insights and smart user experiences.",
+},
 ]
 
 const orbitTech = ["ESP32", "React", "AI", "IoT", "C++", "Python"]
@@ -65,7 +68,7 @@ const About = () => {
           <div className="space-y-8">
             <div className="section-reveal glass-panel rounded-2xl p-8">
               <p className="text-lg leading-8 text-slate-300">
-                I am Rakshit, a Computer Science and Electronics Engineering student passionate about Full Stack Development, IoT Systems, and Intelligent Applications. I enjoy building end-to-end solutions that seamlessly connect hardware and software, from responsive web applications and scalable backend services to smart IoT devices. My focus is on creating technology that is not only visually appealing but also practical, efficient, and capable of solving real-world problems.
+                I am Rakshit, a Electronics & Communication Engineering student passionate about Full Stack Development, IoT Systems, and Intelligent Applications. I enjoy building end-to-end solutions that seamlessly connect hardware and software, from responsive web applications and scalable backend services to smart IoT devices. My focus is on creating technology that is not only visually appealing but also practical, efficient, and capable of solving real-world problems.
               </p>
             </div>
 
