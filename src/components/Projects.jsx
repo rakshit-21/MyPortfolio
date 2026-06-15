@@ -1,8 +1,8 @@
 "use client"
 
-import sahyatriImg from "../assets/sahyatri.png"
-import gptImg from "../assets/gpt.png"
-import ttImg from "../assets/tt.png"
+import sahyatri from "../assets/sahyatri.png"
+import tripmind from "../assets/tripmind.png"
+import spendwise from "../assets/spendwise.png"
 
 const projects = [
   {
@@ -10,7 +10,7 @@ const projects = [
     title: "SahYatri Bus Occupancy Tracker",
     description:
       "An IoT-enabled transportation informatics system for real-time passenger density analytics and smarter public transit operations.",
-    image: sahyatriImg,
+    image: sahyatri,
     technologies: ["IoT", "Next.js", "PostgreSQL", "YOLOv8", "Raspberry Pi", "REST APIs"],
     github: "https://github.com/rakshit-21/SahYatri",
     signal: "Computer Vision + Transit Intelligence",
@@ -20,7 +20,7 @@ const projects = [
   title: "TripMind AI",
   description:
     "An LLM-powered travel planning platform that transforms natural language prompts into structured, multi-day travel itineraries using Groq-hosted LLaMA models and FastAPI.",
-  image: tripmindImg, // update with your image variable
+  image: tripmind, // update with your image variable
   technologies: [
     "React",
     "Vite",
@@ -38,7 +38,7 @@ const projects = [
   title: "SpendWise",
   description:
     "A full-stack expense management application featuring secure JWT authentication, real-time expense tracking, category-wise analytics, and interactive financial dashboards.",
-  image: spendwiseImg, // update with your image variable
+  image: spendwise, // update with your image variable
   technologies: [
     "React",
     "Express",
